@@ -3,14 +3,14 @@
 #############################################
 #set config variables
 
+#backup root dir
+sBACKUP_ROOT="/external/backup/"
+
 #source dir;target dir
 aSOURCE="
 /dsdata/File Server/./;file-server/
 /dsdata/mail/./;mail/
 "
-
-#backup root dir
-sBACKUP_ROOT="/external/backup/"
 
 #rsync extra args/opt
 sOPT="--no-o --no-g"
@@ -58,7 +58,7 @@ pTODAY=""
 pTYPE=""
 verbose=0
 dryrun=0
-dryrun=1
+#dryrun=1
 
 # now enjoy the options in order and nicely split until we see --
 while true; do
@@ -146,7 +146,6 @@ sEXTENSO=`echo ${aEXTENSO} | cut -d',' -f${dWEEK_DAY}`
 dDAY=`date +%Y-%m-%d-${sABREV} -d ${dTODAY} | tr [:upper:] [:lower:]`
 dDATE=`date "+%d/%m/%Y - %R (${sEXTENSO})" -d ${dTODAY} | tr [:upper:] [:lower:]`
 
-
 #############################################
 #set backup type, source link-dest and create target dir
 
@@ -192,7 +191,7 @@ for i in ${aSOURCE}; do
 	sNAME=`echo "${sTARGET}" | tr -cd '[:alpha:]'`
 
 	sLINK_DEST=""
-	sPREVIUS=`ls -1tr ${sBACKUP_ROOT} | grep -v ${sCURRENT} | head -n 1`
+	sPREVIUS=`ls -1r ${sBACKUP_ROOT} | grep -v ${sCURRENT} | head -n 1`
 	if [ ! -z "${sPREVIUS}" ]; then
 		if [ "${sPREVIUS}" != "${sCURRENT}" ]; then
 			sLINK_DEST="--link-dest=${sBACKUP_ROOT}${sPREVIUS}/${sTARGET}"
