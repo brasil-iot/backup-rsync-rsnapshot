@@ -34,8 +34,11 @@ ATENCAO:
      A variavel "aSOURCE" pode ter diversos diretorios, cada grupo em uma linha
 
      aSOURCE="/source-dir/./;target-dir/
+     
      /source-dir-2/./;target-dir-2/
+     
      /source-dir-3/./;target-dir-3/
+     
      /source-dir-4/./;target-dir-4/"
 
      Modifique tambem as variaveis sLOG e sERR (linha 200), ajustando o diretorio onde deve gerar os logs do rsync executado.
@@ -100,8 +103,11 @@ ATTENTION:
      The variable "aSOURCE" can have several directories (one group per line):
 
      aSOURCE="/source-dir/./;target-dir/
+     
      /source-dir-2/./;target-dir-2/
+     
      /source-dir-3/./;target-dir-3/
+     
      /source-dir-4/./;target-dir-4/"
 
      Also modify the sLOG and sERR variables (line 200), adjusting the directory where the logs of the executed rsync should be generated.
