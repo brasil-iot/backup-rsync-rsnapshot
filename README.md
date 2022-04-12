@@ -2,7 +2,7 @@ Backup script rsync in rsnapshot style, but using timestamps as dir names (daily
 
 O problema:
 
-O rsnapshot é uma otima ferramenta de backup, que utiliza o rsync - mas para um usuario que for resgatar o um copia, o formato dos diretorios (diario.0, diario.1, semana.3, mes.2, etc) confunde bastante.
+O rsnapshot é uma otima ferramenta de backup, que utiliza o rsync - mas para um usuario que for resgatar um arquivo, o formato dos diretorios (diario.0, diario.1, semana.3, mes.2, etc) confunde bastante.
 
 Uma alternativa é o script rsnapshot-timestamps:
 
